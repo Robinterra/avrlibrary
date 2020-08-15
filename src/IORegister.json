@@ -1,0 +1,218 @@
+[
+    {
+        "Name": "avr",
+        "Algos": [
+            {
+                "Name": "IORegister",
+                "Mode": "SetDDRB",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[DDRB]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "and r4,r2",
+                "out [DDRB],r4"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "SetPORTB",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[PORTB]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "and r4,r2",
+                "out [PORTB],r4"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "GetPINB",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[PINB]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "in r24,[PINB]",
+                "and r24,r2"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "SetDDRC",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[DDRC]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "and r4,r2",
+                "out [DDRC],r4"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "SetPORTC",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[PORTC]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "and r4,r2",
+                "out [PORTC],r4"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "GetPINC",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[PINC]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "in r24,[PINC]",
+                "and r24,r2"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "SetDDRD",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[DDRD]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "and r4,r2",
+                "out [DDRD],r4"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "SetPORTD",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[PORTD]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "and r4,r2",
+                "out [PORTB],r4"
+                ]
+            },
+            {
+                "Name": "IORegister",
+                "Mode": "GetPIND",
+                "Description": null,
+                "Keys": [
+                    {
+                        "Name": "[PIND]",
+                        "Values": null
+                    }
+                ],
+                "PostKeys": [],
+                "AssemblyCommands": [
+                "in r24,[PIND]",
+                "and r24,r2"
+                ]
+            }
+       ],
+        "AdvancedKeyReplaces": [
+            {
+                "Key": "[DDRB]",
+                "Value": "0x04",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[PINB]",
+                "Value": "0x03",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[PORTB]",
+                "Value": "0x05",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[DDRC]",
+                "Value": "0x07",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[PINC]",
+                "Value": "0x06",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[PORTC]",
+                "Value": "0x08",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[DDRD]",
+                "Value": "0x0a",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[PIND]",
+                "Value": "0x09",
+                "Defines": [
+                  "atmega328p"
+                ]
+            },
+            {
+                "Key": "[PORTD]",
+                "Value": "0x0b",
+                "Defines": [
+                  "atmega328p"
+                ]
+            }
+        ],
+        "KeyPatterns": [
+        ]
+    }
+]
