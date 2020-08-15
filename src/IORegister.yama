@@ -39,15 +39,15 @@ namespace "AVR.Atmega"
 
         // -----------------------------------------------
 
-        public static int PortC[int pin]
+        public static int PortD[int pin]
         {
             get
             {
-                return #defalgo IORegister,GetPINC:;
+                return #defalgo IORegister,GetPIND:;
             }
             set
             {
-                return #defalgo IORegister,SetPORTC:;
+                return #defalgo IORegister,SetPORTD:;
             }
         }
 
