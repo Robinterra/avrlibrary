@@ -1,4 +1,4 @@
-namespace "Atmega328p"
+namespace "AVR.Atmega"
 {
     using "System";
 
