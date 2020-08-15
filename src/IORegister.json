@@ -127,7 +127,7 @@
                 "PostKeys": [],
                 "AssemblyCommands": [
                 "and r4,r2",
-                "out [PORTB],r4"
+                "out [PORTD],r4"
                 ]
             },
             {
