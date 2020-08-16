@@ -64,6 +64,8 @@ namespace "AVR.Atmega"
         public static bool InitPortB ( int pin, int mode )
         {
             #defalgo IORegister,SetDDRB:
+
+            return true;
         }
 
         // -----------------------------------------------
@@ -71,6 +73,8 @@ namespace "AVR.Atmega"
         public static bool InitPortC ( int pin, int mode )
         {
             #defalgo IORegister,SetDDRC:
+
+            return true;
         }
 
         // -----------------------------------------------
@@ -78,6 +82,8 @@ namespace "AVR.Atmega"
         public static bool InitPortD ( int pin, int mode )
         {
             #defalgo IORegister,SetDDRD:
+
+            return true;
         }
 
         // -----------------------------------------------

@@ -1,0 +1,141 @@
+namespace "Arduino.Uno"
+{
+    using "System";
+    using "System.IO";
+
+    using "AVR.Atmega";
+
+    public class PinFacade
+    {
+        #region get/set
+
+        public int Register
+        {
+            get{}
+            set{}
+        }
+
+        public int IoPin
+        {
+            get{}
+            set{}
+        }
+
+        #endregion get/set
+
+        #region ctor
+
+        public this new ( int pin, int mode )
+        {
+            this.Register = PinFacade.GetIoRegister ( pin );
+            this.IoPin = PinFacade.GetIoPin ( pin, this.Register );
+
+            bool isok = this.InitPin ( mode );
+
+            if (isok) return this;
+
+            return null;
+        }
+
+        public this ~ (  )
+        {
+
+        }
+
+        #endregion ctor
+
+        #region methods
+
+        private bool InitPin ( int mode )
+        {
+            if ( this.Register == IoRegisters.DDRB ) return IORegister.InitPortB ( this.IoPin, mode );
+            if ( this.Register == IoRegisters.DDRC ) return IORegister.InitPortC ( this.IoPin, mode );
+            if ( this.Register == IoRegisters.DDRD ) return IORegister.InitPortD ( this.IoPin, mode );
+
+            return false;
+        }
+
+        private int Read (  )
+        {
+            if ( this.Register == IoRegisters.DDRB ) return IORegister.PortB[this.IoPin];
+            if ( this.Register == IoRegisters.DDRC ) return IORegister.PortC[this.IoPin];
+            if ( this.Register == IoRegisters.DDRD ) return IORegister.PortD[this.IoPin];
+
+            return false;
+        }
+
+        private bool Write ( int value )
+        {
+            if ( this.Register == IoRegisters.DDRB ) return IORegister.PortB[this.IoPin] = value;
+            if ( this.Register == IoRegisters.DDRC ) return IORegister.PortC[this.IoPin] = value;
+            if ( this.Register == IoRegisters.DDRD ) return IORegister.PortD[this.IoPin] = value;
+
+            return false;
+        }
+
+        private static int GetIoPin ( int pin, int register )
+        {
+            if (register == IoRegisters.DDRB)
+            {
+                pin = pin - 8;
+            }
+            if (register == IoRegisters.DDRC)
+            {
+                pin = pin - 14;
+            }
+
+            if (pin == 0) return IOPin.Pin0;
+            if (pin == 1) return IOPin.Pin1;
+            if (pin == 2) return IOPin.Pin2;
+            if (pin == 3) return IOPin.Pin3;
+            if (pin == 4) return IOPin.Pin4;
+            if (pin == 5) return IOPin.Pin5;
+            if (pin == 6) return IOPin.Pin6;
+            if (pin == 7) return IOPin.Pin7;
+
+            return null;
+        }
+
+        private static int GetIoRegister ( int pin )
+        {
+            if (pin < 8) return IoRegisters.DDRD;
+            if (pin < 14) return IoRegisters.DDRB;
+            if (pin < 20) return IoRegisters.DDRC;
+
+            return null;
+        }
+
+        #endregion methods
+    }
+
+    public enum IoRegisters
+    {
+        DDRB 1,
+        DDRC 2,
+        DDRD 3
+    }
+
+    public enum ArduinoPins
+    {
+        D0 0,
+        D1 1,
+        D2 2,
+        D3 3,
+        D4 4,
+        D5 5,
+        D6 6,
+        D7 7,
+        D8 8,
+        D9 9,
+        D10 10,
+        D11 11,
+        D12 12,
+        D13 13,
+        D14 14,
+        D15 15,
+        D16 16,
+        D17 17,
+        D18 18,
+        D19 19
+    }
+}
