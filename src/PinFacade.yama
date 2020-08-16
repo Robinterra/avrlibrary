@@ -30,9 +30,7 @@ namespace "Arduino.Uno"
             this.Register = PinFacade.GetIoRegister ( pin );
             this.IoPin = PinFacade.GetIoPin ( pin, this.Register );
 
-            bool isok = this.InitPin ( mode );
-
-            if (isok) return this;
+            if (this.InitPin ( mode )) return this;
 
             return null;
         }
