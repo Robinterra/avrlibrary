@@ -9,7 +9,10 @@ namespace "Arduino.Uno"
     {
         #region get/set
 
-        public int Register
+        public int Register;
+        public int IoPint;
+
+        /*public int Register
         {
             get{}
             set{}
@@ -19,7 +22,7 @@ namespace "Arduino.Uno"
         {
             get{}
             set{}
-        }
+        }*/
 
         #endregion get/set
 
